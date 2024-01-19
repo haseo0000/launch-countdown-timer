@@ -1,0 +1,29 @@
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 320px;
+  background: url("/images/pattern-hills.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom right -280px;
+  display: grid;
+  place-content: center;
+}
+
+.footer-icon-container {
+  margin-top: 5rem;
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-icon {
+  width: 30px;
+  cursor: pointer;
+  color: var(--GrayishBlue);
+}
+
+.footer-icon:hover {
+  color: var(--SoftRed);
+}

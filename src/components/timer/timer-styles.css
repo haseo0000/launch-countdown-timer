@@ -1,0 +1,132 @@
+.timer-container {
+  width: 100px;
+  display: grid;
+  justify-items: center;
+}
+
+.time-box {
+  width: 100px;
+  height: 90px;
+  background: linear-gradient(#2b2d45 50%, #373352 50%);
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  position: relative;
+
+  box-shadow: 0 7px 0 1px var(--bg3);
+  overflow: hidden;
+}
+
+/* test animation */
+.top {
+  width: 100%;
+  height: 50%;
+  /* background: lime; */
+  position: absolute;
+  top: 0;
+
+  transform-style: preserve-3d;
+  /* transition: all 500ms ease-in-out; */
+  transform-origin: center bottom;
+}
+
+/* .run-flip-ani {
+  animation: flipTop 980ms ease-in-out infinite 650ms;
+} */
+
+/* @keyframes flipTop {
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  100% {
+    transform: rotateX(180deg);
+  }
+} */
+
+.time-box:hover .top {
+  transform: rotateX(180deg);
+}
+
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #2b2d45;
+  backface-visibility: hidden;
+  /* box-shadow: 0px 0px 0 2px black; */
+}
+
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #373352;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  /* box-shadow: 0 0 0 2px black; */
+}
+
+/* test animation */
+
+.time-box::before,
+.time-box::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  aspect-ratio: 1;
+  background: var(--bg3);
+  border-radius: 50%;
+  z-index: 20;
+}
+
+.time-box::before {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.time-box::after {
+  right: 0;
+  transform: translateX(50%);
+}
+
+.time-box > span {
+  font-size: 3.25em;
+  font-weight: 700;
+
+  background: linear-gradient(#cf4a6d 50%, #f35e82 50%);
+  background-clip: text;
+  color: transparent;
+  z-index: 10;
+
+  transition: all 500ms ease-in-out;
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+
+/* .run-text-ani {
+  animation: fliptime 980ms ease-in-out infinite 650ms;
+} */
+
+/* @keyframes fliptime {
+  0% {
+    transform: rotateX(0deg);
+  }
+
+  100% {
+    transform: rotateX(360deg);
+  }
+} */
+
+.time-box:hover > span {
+  transform: rotateX(360deg);
+}
+
+.time-unit {
+  margin-top: 1rem;
+  font-size: 0.6em;
+  color: var(--GrayishBlue);
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
